@@ -1,6 +1,6 @@
 # Objetivo
 Este projeto tem como objetivo executar microserviços em kubernetes usando Rancher Descktop, controlado por GitOps com ArgoCD apartir de um repositorio publico
-## Ferramnetas
+## Ferramentas
 - Git
 - GitHub
 - Rancher Descketop
