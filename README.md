@@ -9,6 +9,8 @@ Este projeto tem como objetivo executar microserviços em kubernetes usando Ranc
 - Docker
 # Passo a passo
 
+. Conectando no argoCD
+<img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
 
 # Conclusão
   Este projeto tem como objetivo de utilizar kubernesres para fazer deploy de forma automatizada gerenciando o vericionamento com a ferramenta Git.
