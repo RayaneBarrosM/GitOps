@@ -12,40 +12,65 @@ Este projeto tem como objetivo executar microserviços em kubernetes usando Ranc
 **1. instalando o Rancher Descktop**
 1) acesse https://rancherdesktop.io/
 **2. Para este projeto foi necessario fazer um forck do repositório microservices-demo usando apenas o arquivo .yaml**
-- realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
-- Deixe apenas a pasta **release** com o documento kubernetes-manifests.yaml
-- Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
+1) realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
+2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
+3) Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
+   
 **3. Instalando o argoCD**
-   Para instalar o argocd é necessario utilizar o terminal Powershell
-   e executar os seguintes comandos
-   ```
+Para instalar o argocd é necessario utilizar o terminal Powershell e executar os seguintes comandos
+   ```bash
    kubectl create namespace argocd
    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifest/install.yaml
    ```
    Em caso de erro status=Pending após o primeiro comando, espere, pois o kubertes pode estar iniciando os pods, use kubectl get pods -n argocd para ver o status, caso apareça 0/1 eles ainda não estão prontos
+   ![image.png](attachment:89f08ed3-8f7f-4038-9ad0-c37f8aff70ef:image.png)
+
 **4. Acessando argocd**
-   1. para adquirir a senha de login do argoCD execute
+1) Para adquirir a senha de login do argoCD execute
 ```       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
 -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) 
 ```
-2. Para iniciar a interface do argoCD execute a porta https 433
+<img width="938" height="64" alt="image" src="https://github.com/user-attachments/assets/d4aaa9ae-10b4-4488-9813-2c5eac3df9af" />
+
+2) Para iniciar a interface do argoCD execute a porta https 433
 ```
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
-3. acesse o localhost:8080 no seu navegador
+3) Acesse o `localhost:8080` no seu navegador
 - na sua tela aparecera uma mensagem de aviso
-- clique em avançadas e em seguida em proseguir para localhost(não seguro)
+4) Clique em avançadas e em seguida em proseguir para localhost(não seguro)
 - enquanto voce acessa a pagina aparecerão logs de conecxão no seu powershell
-4. Aparecera a tela de login, para se conctar use a senha que foi dada pelo comando anterior
+  <img width="677" height="708" alt="image" src="https://github.com/user-attachments/assets/00c3b573-ba29-4cfb-97fe-4f7f469b1c44" />
+  
+5) Na tela de login use a senha que foi dada pelo comando anterior
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
-Após preencher as configurações verifique a sincronização clicando no botão synchronize
-Caso a aplicação esteja health volte ao prompt
-execute `ctrol+C` para parar
+
+6)Preencha os campos de criação da aplicação
+**Dicas para a criação:**
+- Não utilize o nomes com letras maiúsculas
+- Caso não queira utilizar o projectname como `default` crie antes de começar a configurar a aplicação
+<img width="768" height="846" alt="image" src="https://github.com/user-attachments/assets/bcc231d2-b5a8-4344-8eb2-3d20ce2c02ee" />
+<img width="780" height="742" alt="image" src="https://github.com/user-attachments/assets/17f4df63-9480-44ac-b177-af598ea82469" />
+
+7) Clique em create no topo da tela
+8) Após criar verifique a sincronização clicando no botão synchronize
+
+Erro CrashLoopBack
+<img width="567" height="329" alt="image" src="https://github.com/user-attachments/assets/d4a57a95-8aee-4956-a42b-e2aea2af7acb" />
+Caso o status de sincronização fique Degraded abra outro terminal e verifique os pods com `kubectl get pods`
+<img width="664" height="224" alt="image" src="https://github.com/user-attachments/assets/67ff6ade-bd1b-4d71-bccf-208d7322e37a" />
+
+Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
+
+**5. Acessando o front-end**
+Execute `ctrol+C` para parar
 execute
 ```
 kubectl port-forward svc/frontend-external 8080:80
 ```
-acesse `http://localhost:8080/`
+Acesse `http://localhost:8080/`
+<img width="888" height="954" alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
+
 
 # Conclusão
   Este projeto tem como objetivo de utilizar kubernesres para fazer deploy de forma automatizada gerenciando o vericionamento com a ferramenta Git.
