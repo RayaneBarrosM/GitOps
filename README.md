@@ -21,8 +21,7 @@ Este projeto tem como objetivo executar microserviços em kubernetes usando Ranc
    Em caso de erro status=Pending após o primeiro comando, espere, pois o kubertes pode estar iniciando os pods, use kubectl get pods -n argocd para ver o status, caso apareça 0/1 eles ainda não estão prontos
 4. Acessando argocd
    1. para adquirir a senha de login do argoCD execute
-       ```
-       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
+```       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
 -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) 
 ```
 2. Para iniciar a interface do argoCD execute a porta https 433
