@@ -25,7 +25,7 @@ Este projetodemonstra a execução de microserviços em um cluster Kubernetes lo
 ## 1. Instalando o Rancher Descktop
 1) acesse https://rancherdesktop.io/
 ## 2. Preparação do Repositório Git
-Para este projeto foi necessario fazer um forck do repositório microservices-demo usando apenas o arquivo .yaml**
+
 1) realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
 2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
 3) Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
