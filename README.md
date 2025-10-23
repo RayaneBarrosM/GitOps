@@ -34,6 +34,11 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 - enquanto voce acessa a pagina aparecerão logs de conecxão no seu powershell
 4. Aparecera a tela de login, para se conctar use a senha que foi dada pelo comando anterior
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
+Após preencher as configurações verifique a sincronização clicando no botão synchronize
+Caso a aplicação esteja health volte ao prompt
+execute ctrol+C para parar
+execute kubectl port-forward svc/frontend-external 8080:80
+acesse http://localhost:8080/
 
 # Conclusão
   Este projeto tem como objetivo de utilizar kubernesres para fazer deploy de forma automatizada gerenciando o vericionamento com a ferramenta Git.
