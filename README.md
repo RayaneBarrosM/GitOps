@@ -45,7 +45,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 5) Na tela de login use a senha que foi dada pelo comando anterior
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
 
-6)Preencha os campos de criação da aplicação
+6) Preencha os campos de criação da aplicação
 **Dicas para a criação:**
 - Não utilize o nomes com letras maiúsculas
 - Caso não queira utilizar o projectname como `default` crie antes de começar a configurar a aplicação
