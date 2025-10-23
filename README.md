@@ -22,7 +22,7 @@ Este projetodemonstra a execução de microserviços em um cluster Kubernetes lo
 6. [Acessando o Front-end da Aplicação](#5-acessando-o-front-end)
 7. [Conclusão](#conclusão)
    
-## 1. instalação do Rancher Descktop
+## 1. Instalando o Rancher Descktop
 1) acesse https://rancherdesktop.io/
 ## 2. Preparação do Repositório Git
 Para este projeto foi necessario fazer um forck do repositório microservices-demo usando apenas o arquivo .yaml**
@@ -38,14 +38,14 @@ gitops-microservices/
    
 ## 3. Instalando o argoCD no Kubernetes
 Para instalar o argocd é necessario utilizar o terminal Powershell e executar os seguintes comandos
-   ```bash
+```bash
    kubectl create namespace argocd
    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifest/install.yaml
-   ```
+```
    Em caso de erro status=Pending após o primeiro comando, espere, pois o kubertes pode estar iniciando os pods, use kubectl get pods -n argocd para ver o status, caso apareça 0/1 eles ainda não estão prontos
-   ![image.png](attachment:89f08ed3-8f7f-4038-9ad0-c37f8aff70ef:image.png)
+  <img width="891" height="34" alt="image" src="https://github.com/user-attachments/assets/56f2af48-c9a9-4355-ae9b-5773053ceae1" />
 
-**4. Acessando argocd**
+## 4 Acessando a Interface Web do ArgoCD
 1) Para adquirir a senha de login do argoCD execute
 ```       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
 -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) 
@@ -65,15 +65,16 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 5) Na tela de login use a senha que foi dada pelo comando anterior
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
 
-6) Preencha os campos de criação da aplicação
+## 5. Configuração da Aplicação no ArgoCD
+1) Preencha os campos de criação da aplicação
 **Dicas para a criação:**
 - Não utilize o nomes com letras maiúsculas
 - Caso não queira utilizar o projectname como `default` crie antes de começar a configurar a aplicação
 <img width="768" height="846" alt="image" src="https://github.com/user-attachments/assets/bcc231d2-b5a8-4344-8eb2-3d20ce2c02ee" />
 <img width="780" height="742" alt="image" src="https://github.com/user-attachments/assets/17f4df63-9480-44ac-b177-af598ea82469" />
 
-7) Clique em create no topo da tela
-8) Após criar verifique a sincronização clicando no botão synchronize
+2) Clique em create no topo da tela
+3) Após criar verifique a sincronização clicando no botão synchronize
 
 Erro CrashLoopBack
 <img width="567" height="329" alt="image" src="https://github.com/user-attachments/assets/d4a57a95-8aee-4956-a42b-e2aea2af7acb" />
@@ -82,7 +83,7 @@ Caso o status de sincronização fique Degraded abra outro terminal e verifique 
 
 Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
 
-## 5. Acessando o front-end da Aplicação
+## 6. Acessando o front-end da Aplicação
 Execute `ctrol+C` para parar
 execute
 ```
