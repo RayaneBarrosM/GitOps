@@ -43,6 +43,7 @@ Para instalar o argocd é necessario utilizar o terminal Powershell e executar o
    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifest/install.yaml
 ```
    Em caso de erro status=Pending após o primeiro comando, espere, pois o kubertes pode estar iniciando os pods, use kubectl get pods -n argocd para ver o status, caso apareça 0/1 eles ainda não estão prontos
+   
   <img width="891" height="34" alt="image" src="https://github.com/user-attachments/assets/56f2af48-c9a9-4355-ae9b-5773053ceae1" />
 
 ## 4 Acessando a Interface Web do ArgoCD
@@ -60,9 +61,11 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 - na sua tela aparecera uma mensagem de aviso
 4) Clique em avançadas e em seguida em proseguir para localhost(não seguro)
 - enquanto voce acessa a pagina aparecerão logs de conecxão no seu powershell
+  
   <img width="677" height="708" alt="image" src="https://github.com/user-attachments/assets/00c3b573-ba29-4cfb-97fe-4f7f469b1c44" />
   
 5) Na tela de login use a senha que foi dada pelo comando anterior
+
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
 
 ## 5. Configuração da Aplicação no ArgoCD
@@ -71,6 +74,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 **Dicas para a criação:**
 - Não utilize o nomes com letras maiúsculas
 - Caso não queira utilizar o projectname como `default` crie antes de começar a configurar a aplicação
+  
 <img width="768" height="846" alt="image" src="https://github.com/user-attachments/assets/bcc231d2-b5a8-4344-8eb2-3d20ce2c02ee" />
 <img width="780" height="742" alt="image" src="https://github.com/user-attachments/assets/17f4df63-9480-44ac-b177-af598ea82469" />
 
@@ -93,9 +97,9 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 kubectl port-forward svc/frontend-external 8080:80
 ```
 3. Acesse `http://localhost:8080/`
-<div style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" alt="kubectl get pods status" style="display: block; margin: 0 auto; width: 400px;">
-</div>
+   
+<img src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" alt="kubectl get pods status" style="display: block; margin: 0 auto; width: 400px;">
+
 
 # Conclusão
   Este projeto foi desenvolvido como parte do Programa de Estágio da Compass UOL com o foco no aprendizado do GitOPs no deployment de microserviços
