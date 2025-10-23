@@ -94,7 +94,7 @@ kubectl port-forward svc/frontend-external 8080:80
 ```
 3. Acesse `http://localhost:8080/`
 <div style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/67ff6ade-bd1b-4d71-bccf-208d7322e37a" alt="kubectl get pods status" style="display: block; margin: 0 auto; width: 400px;">
+  <img src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" alt="kubectl get pods status" style="display: block; margin: 0 auto; width: 400px;">
 </div>
 
 # Conclusão
