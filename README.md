@@ -66,7 +66,8 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
 
 ## 5. Configuração da Aplicação no ArgoCD
-1) Preencha os campos de criação da aplicação
+1) Preencha os campos de criação da aplicação conforme as imagens
+   
 **Dicas para a criação:**
 - Não utilize o nomes com letras maiúsculas
 - Caso não queira utilizar o projectname como `default` crie antes de começar a configurar a aplicação
@@ -76,20 +77,21 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 2) Clique em create no topo da tela
 3) Após criar verifique a sincronização clicando no botão synchronize
 
-Erro CrashLoopBack
+### Erro CrashLoopBack
 <img width="567" height="329" alt="image" src="https://github.com/user-attachments/assets/d4a57a95-8aee-4956-a42b-e2aea2af7acb" />
-Caso o status de sincronização fique Degraded abra outro terminal e verifique os pods com `kubectl get pods`
+Caso o status de sincronização fique Degraded abra outro terminal e verifique os pods com `kubectl get pods -n default`
 <img width="664" height="224" alt="image" src="https://github.com/user-attachments/assets/67ff6ade-bd1b-4d71-bccf-208d7322e37a" />
 
 Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
 
 ## 6. Acessando o front-end da Aplicação
-Execute `ctrol+C` para parar
-execute
+1. Execute `ctrol+C` para parar
+execute o comando abaixo para adicionar o front-end a porta http 80
 ```
 kubectl port-forward svc/frontend-external 8080:80
 ```
 Acesse `http://localhost:8080/`
+
 <img width="888" height="954" alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
 
 
