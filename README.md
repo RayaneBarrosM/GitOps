@@ -93,9 +93,9 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 kubectl port-forward svc/frontend-external 8080:80
 ```
 3. Acesse `http://localhost:8080/`
-
-<img width="888" height="954" alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
-
+<div style="text-align: center;">
+  <img width="400" height="954" alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
+</div>
 
 # Conclusão
   Este projeto tem como objetivo de utilizar kubernesres para fazer deploy de forma automatizada gerenciando o vericionamento com a ferramenta Git.
