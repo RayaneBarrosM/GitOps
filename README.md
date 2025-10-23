@@ -11,8 +11,6 @@ Este projetodemonstra a execução de microserviços em um cluster Kubernetes lo
 ![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Windows 10](https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-[PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell?view=powershell-7.4)
-[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
   
 # 🎯Passo a passo 
 ## 📑 Conteúdo
@@ -31,10 +29,11 @@ Para este projeto foi necessario fazer um forck do repositório microservices-de
 1) realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
 2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
 3) Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
+   
    ```
 gitops-microservices/ 
-└── k8s/ 
-└── online-boutique.yaml
+        └── k8s/ 
+             └── online-boutique.yaml
    ```
    
 ## 3. Instalando o argoCD no Kubernetes
