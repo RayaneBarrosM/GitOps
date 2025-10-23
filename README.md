@@ -30,11 +30,11 @@ Para este projeto foi necessario fazer um forck do repositório microservices-de
 2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
 3) Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
    
-   ```
+```
 gitops-microservices/ 
         └── k8s/ 
              └── online-boutique.yaml
-   ```
+```
    
 ## 3. Instalando o argoCD no Kubernetes
 Para instalar o argocd é necessario utilizar o terminal Powershell e executar os seguintes comandos
