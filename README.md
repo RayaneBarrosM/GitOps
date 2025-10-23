@@ -79,10 +79,12 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 ### Erro CrashLoopBack
 <img width="567" height="329" alt="image" src="https://github.com/user-attachments/assets/d4a57a95-8aee-4956-a42b-e2aea2af7acb" />
-Caso o status de sincronização fique Degraded abra outro terminal e verifique os pods com `kubectl get pods -n default`
+
+- Caso o status de sincronização fique Degraded abra outro terminal e verifique os pods com `kubectl get pods -n default`
+
 <img width="664" height="224" alt="image" src="https://github.com/user-attachments/assets/67ff6ade-bd1b-4d71-bccf-208d7322e37a" />
 
-Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
+❗ Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
 
 ## 6. Acessando o front-end da Aplicação
 1. Execute `ctrol+C` para parar
