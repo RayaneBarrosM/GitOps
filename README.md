@@ -94,7 +94,7 @@ kubectl port-forward svc/frontend-external 8080:80
 ```
 3. Acesse `http://localhost:8080/`
 <div style="text-align: center;">
-  <img width="400" height="954" alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
+  <img width="400" height="954" text-align: center alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
 </div>
 
 # Conclusão
