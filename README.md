@@ -7,9 +7,31 @@ Este projeto tem como objetivo executar microserviços em kubernetes usando Ranc
 - Kubernetes
 - ArgoCd
 - Docker
+- windows 10
 # Passo a passo
-
-. Conectando no argoCD
+1. instalando o Rancher Descktop
+2. Para este projeto foi necessario fazer um forck do projeto .... usando apenas o arquivo .yaml
+3. Instalando o argoCD
+   Para intalar o argocd é necessario utilizar o terminal Powershell
+   e executar os seguintes comandos
+   ```
+   kubectl create namespace argocd
+   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifest/install.yaml
+   ```
+   Em caso de erro status=Pending após o primeiro comando, espere, pois o kubertes pode estar iniciando os pods, use kubectl get pods -n argocd para ver o status, caso apareça 0/1 eles ainda não estão prontos
+4. Acessando argocd
+   1. para adquirir a senha de login do argoCD execute
+       ```[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
+-n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) ```
+2. Para iniciar a interface do argoCD execute a porta https 433
+```
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+3. acesse o localhost:8080 no seu navegador
+- na sua tela aparecera uma mensagem de aviso
+- clique em avançadas e em seguida em proseguir para localhost(não seguro)
+- enquanto voce acessa a pagina aparecerão logs de conecxão no seu powershell
+4. Aparecera a tela de login, para se conctar use a senha que foi dada pelo comando anterior
 <img width="915" height="756" alt="image" src="https://github.com/user-attachments/assets/aa32cd8b-b3b2-4416-8f5c-fe1034d48ed2" />
 
 # Conclusão
