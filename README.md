@@ -92,7 +92,7 @@ execute o comando abaixo para adicionar o front-end a porta http 80
 ```
 kubectl port-forward svc/frontend-external 8080:80
 ```
-Acesse `http://localhost:8080/`
+2. Acesse `http://localhost:8080/`
 
 <img width="888" height="954" alt="image" src="https://github.com/user-attachments/assets/158e0732-7a72-4e9b-9b5e-2857ed7ec8c6" />
 
