@@ -9,17 +9,21 @@ Este projeto tem como objetivo executar microserviços em kubernetes usando Ranc
 - Docker
 - windows 10
 # Passo a passo
-1. instalando o Rancher Descktop
-2. Para este projeto foi necessario fazer um forck do projeto .... usando apenas o arquivo .yaml
-3. Instalando o argoCD
-   Para intalar o argocd é necessario utilizar o terminal Powershell
+**1. instalando o Rancher Descktop**
+1) acesse https://rancherdesktop.io/
+**2. Para este projeto foi necessario fazer um forck do repositório microservices-demo usando apenas o arquivo .yaml**
+- realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
+- Deixe apenas a pasta **release** com o documento kubernetes-manifests.yaml
+- Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
+**3. Instalando o argoCD**
+   Para instalar o argocd é necessario utilizar o terminal Powershell
    e executar os seguintes comandos
    ```
    kubectl create namespace argocd
    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifest/install.yaml
    ```
    Em caso de erro status=Pending após o primeiro comando, espere, pois o kubertes pode estar iniciando os pods, use kubectl get pods -n argocd para ver o status, caso apareça 0/1 eles ainda não estão prontos
-4. Acessando argocd
+**4. Acessando argocd**
    1. para adquirir a senha de login do argoCD execute
 ```       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
 -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) 
