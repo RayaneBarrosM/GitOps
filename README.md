@@ -98,4 +98,4 @@ kubectl port-forward svc/frontend-external 8080:80
 </div>
 
 # Conclusão
-  Este projeto tem como objetivo de utilizar kubernesres para fazer deploy de forma automatizada gerenciando o vericionamento com a ferramenta Git.
+  Este projeto foi desenvolvido como parte do Programa de Estágio da Compass UOL com o foco no aprendizado do GitOPs no deployment de microserviços
