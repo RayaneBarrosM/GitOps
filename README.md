@@ -1,5 +1,8 @@
-# Objetivo
-Este projeto tem como objetivo executar microserviços em kubernetes usando Rancher Descktop, controlado por GitOps com ArgoCD apartir de um repositorio publico
+# 🚀 GitOps com ArgoCD e Rancher Desktop
+
+## Objetivo
+Este projetodemonstra a execução de microserviços em um cluster Kubernetes local (Rancher Desktop), controlado por GitOps através do ArgoCD, utilizando um repositorio publico.
+
 ## Ferramentas
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
@@ -8,15 +11,33 @@ Este projeto tem como objetivo executar microserviços em kubernetes usando Ranc
 ![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Windows 10](https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-# Passo a passo
-**1. instalando o Rancher Descktop**
+[PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/install/installing-powershell?view=powershell-7.4)
+[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+  
+# 🎯Passo a passo 
+## 📑 Conteúdo
+1. [Instalando o Rancher Desktop](#1-instalando-o-rancher-desktop)
+2. [Preparação do Repositório Git](#2-preparação-do-repositório-git)
+3. [Instalando o ArgoCD no Kubernetes](#3-instalando-o-argocd)
+4. [Acessando a Interface Web do ArgoCD](#4-acessando-argocd)
+5. [Configuração da Aplicação no ArgoCD](#5-configuração-da-aplicação-no-argocd)
+6. [Acessando o Front-end da Aplicação](#5-acessando-o-front-end)
+7. [Conclusão](#conclusão)
+   
+## 1. instalação do Rancher Descktop
 1) acesse https://rancherdesktop.io/
-**2. Para este projeto foi necessario fazer um forck do repositório microservices-demo usando apenas o arquivo .yaml**
+## 2. Preparação do Repositório Git
+Para este projeto foi necessario fazer um forck do repositório microservices-demo usando apenas o arquivo .yaml**
 1) realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
 2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
 3) Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
+   ```
+gitops-microservices/ 
+└── k8s/ 
+└── online-boutique.yaml
+   ```
    
-**3. Instalando o argoCD**
+## 3. Instalando o argoCD no Kubernetes
 Para instalar o argocd é necessario utilizar o terminal Powershell e executar os seguintes comandos
    ```bash
    kubectl create namespace argocd
@@ -62,7 +83,7 @@ Caso o status de sincronização fique Degraded abra outro terminal e verifique 
 
 Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
 
-**5. Acessando o front-end**
+## 5. Acessando o front-end da Aplicação
 Execute `ctrol+C` para parar
 execute
 ```
