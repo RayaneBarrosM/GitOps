@@ -35,7 +35,9 @@ gitops-microservices/
         └── k8s/ 
              └── online-boutique.yaml
 ```
-   
+
+♦ Repositorio publico criado para o projeto: https://github.com/RayaneBarrosM/gitops-microservices.git
+
 ## 3. Instalando o argoCD no Kubernetes
 Para instalar o argocd é necessario utilizar o terminal Powershell e executar os seguintes comandos
 ```bash
