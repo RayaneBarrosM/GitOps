@@ -1,7 +1,7 @@
 # 🚀 GitOps com ArgoCD e Rancher Desktop
 
 ## Objetivo
-Este projetodemonstra a execução de microserviços em um cluster Kubernetes local (Rancher Desktop), controlado por GitOps através do ArgoCD, utilizando um repositorio publico.
+Este projeto demonstra a execução de microserviços em um cluster Kubernetes local (Rancher Desktop), controlado por GitOps através do ArgoCD, utilizando um repositório publico.
 
 ## Ferramentas
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
@@ -22,13 +22,13 @@ Este projetodemonstra a execução de microserviços em um cluster Kubernetes lo
 6. [Acessando o Front-end da Aplicação](#6-acessando-o-front-end-da-aplicação)
 7. [Conclusão](#7-conclusão)
    
-## 1. Instalando o Rancher Descktop
+## 1. Instalando o Rancher Desktop
 1) acesse https://rancherdesktop.io/
 ## 2. Preparação do Repositório Git
 
 1) realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
 2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
-3) Renomeiea pasta release para **k8s** e o arquivo para **online-boutique.yaml**
+3) Renomeie a pasta release para **k8s** e o arquivo para **online-boutique.yaml**
    
 ```
 gitops-microservices/ 
@@ -62,7 +62,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 3) Acesse o `localhost:8080` no seu navegador
 - na sua tela aparecera uma mensagem de aviso
 4) Clique em avançadas e em seguida em proseguir para localhost(não seguro)
-- enquanto voce acessa a pagina aparecerão logs de conecxão no seu powershell
+- enquanto voce acessa a pagina aparecerão logs de conexão no seu powershell
   
   <img width="677" height="708" alt="image" src="https://github.com/user-attachments/assets/00c3b573-ba29-4cfb-97fe-4f7f469b1c44" />
   
