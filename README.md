@@ -90,7 +90,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 ❗ Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
 
-## 6. Acessando o front-end da Aplicação
+## 6. Acessando o Front-end da Aplicação
 1. Execute `ctrol+C` para parar
 2. execute o comando abaixo para adicionar o front-end a porta http 80
 ```
