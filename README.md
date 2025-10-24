@@ -46,7 +46,7 @@ Para instalar o argocd é necessario utilizar o terminal Powershell e executar o
    
   <img width="891" height="34" alt="image" src="https://github.com/user-attachments/assets/56f2af48-c9a9-4355-ae9b-5773053ceae1" />
 
-## 4 Acessando a Interface Web do ArgoCD
+## 4. Acessando a Interface Web do ArgoCD
 1) Para adquirir a senha de login do argoCD execute
 ```       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
 -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) 
