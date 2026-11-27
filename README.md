@@ -13,7 +13,7 @@ Este projeto demonstra a execução de microserviços em um cluster Kubernetes l
 ![Windows 10](https://img.shields.io/badge/Windows_10-0078D6?style=for-the-badge&logo=windows&logoColor=white)
   
 # 🎯Passo a passo 
- 📑 **Sumario**
+ 📑 **Sumário**
 1. [Instalando o Rancher Desktop](#1-instalando-o-rancher-desktop)
 2. [Preparação do Repositório Git](#2-preparação-do-repositório-git)
 3. [Instalando o ArgoCD no Kubernetes](#3-instalando-o-argocd-no-kubernetes)
@@ -23,10 +23,10 @@ Este projeto demonstra a execução de microserviços em um cluster Kubernetes l
 7. [Conclusão](#7-conclusão)
    
 ## 1. Instalando o Rancher Desktop
-1) acesse https://rancherdesktop.io/
+1) Acesse https://rancherdesktop.io/
 ## 2. Preparação do Repositório Git
 
-1) realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
+1) Realize o fork de https://github.com/GoogleCloudPlatform/microservices-demo
 2) Deixe apenas a pasta **release** com o documento **kubernetes-manifests.yaml**
 3) Renomeie a pasta release para **k8s** e o arquivo para **online-boutique.yaml**
    
@@ -36,10 +36,10 @@ gitops-microservices/
              └── online-boutique.yaml
 ```
 
-♦ Repositorio publico criado para o projeto: https://github.com/RayaneBarrosM/gitops-microservices.git
+♦ Repositório publico criado para o projeto: https://github.com/RayaneBarrosM/gitops-microservices.git
 
 ## 3. Instalando o argoCD no Kubernetes
-Para instalar o argocd é necessario utilizar o terminal Powershell e executar os seguintes comandos
+Para instalar o argocd, é necessário utilizar o terminal Powershell e executar os seguintes comandos:
 ```bash
    kubectl create namespace argocd
    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifest/install.yaml
@@ -49,7 +49,7 @@ Para instalar o argocd é necessario utilizar o terminal Powershell e executar o
   <img width="891" height="34" alt="image" src="https://github.com/user-attachments/assets/56f2af48-c9a9-4355-ae9b-5773053ceae1" />
 
 ## 4. Acessando a Interface Web do ArgoCD
-1) Para adquirir a senha de login do argoCD execute
+1) Para adquirir a senha de login do argoCD, execute:
 ```       [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((kubectl
 -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"))) 
 ```
@@ -60,9 +60,9 @@ Para instalar o argocd é necessario utilizar o terminal Powershell e executar o
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 3) Acesse o `localhost:8080` no seu navegador
-- na sua tela aparecera uma mensagem de aviso
+- Na sua tela aparecerá uma mensagem de aviso
 4) Clique em avançadas e em seguida em proseguir para localhost(não seguro)
-- enquanto voce acessa a pagina aparecerão logs de conexão no seu powershell
+- Enquanto você acessa a página aparecerão logs de conexão no seu powershell
   
   <img width="677" height="708" alt="image" src="https://github.com/user-attachments/assets/00c3b573-ba29-4cfb-97fe-4f7f469b1c44" />
   
@@ -74,27 +74,27 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 1) Preencha os campos de criação da aplicação conforme as imagens
    
 **Dicas para a criação:**
-- Não utilize o nomes com letras maiúsculas
-- Caso não queira utilizar o projectname como `default` crie antes de começar a configurar a aplicação
+- Não utilize nomes com letras maiúsculas
+- Caso não queira utilizar o projectname como `default`, crie antes de começar a configurar a aplicação
   
 <img width="768" height="846" alt="image" src="https://github.com/user-attachments/assets/bcc231d2-b5a8-4344-8eb2-3d20ce2c02ee" />
 <img width="780" height="742" alt="image" src="https://github.com/user-attachments/assets/17f4df63-9480-44ac-b177-af598ea82469" />
 
 2) Clique em create no topo da tela
-3) Após criar verifique a sincronização clicando no botão synchronize
+3) Após criar verifique a sincronização clicando no botão `Synchronize`
 
 ### Erro CrashLoopBack
 <img width="567" height="329" alt="image" src="https://github.com/user-attachments/assets/d4a57a95-8aee-4956-a42b-e2aea2af7acb" />
 
-- Caso o status de sincronização fique Degraded abra outro terminal e verifique os pods com `kubectl get pods -n default`
+- Caso o status de sincronização fique **Degraded** abra outro terminal e verifique os pods com `kubectl get pods -n default`
 
 <img width="664" height="224" alt="image" src="https://github.com/user-attachments/assets/67ff6ade-bd1b-4d71-bccf-208d7322e37a" />
 
-❗ Para forçar a sincronização delete os pods problematicos e serão criados outros automaticamente
+❗ Para forçar a sincronização, delete os pods problemáticos, e outros serão criados automaticamente.
 
 ## 6. Acessando o Front-end da Aplicação
-1. Execute `ctrol+C` para parar
-2. execute o comando abaixo para adicionar o front-end a porta http 80
+1. Execute `Ctrl+C` para parar
+2. Execute o comando abaixo para adicionar o front-end à porta HTTP 80
 ```
 kubectl port-forward svc/frontend-external 8080:80
 ```
@@ -104,4 +104,4 @@ kubectl port-forward svc/frontend-external 8080:80
 
 
 # Conclusão
-  Este projeto foi desenvolvido como parte do Programa de Estágio da Compass UOL com o foco no aprendizado do GitOPs no deployment de microserviços
+  Este projeto foi desenvolvido como parte do Programa de Estágio da Compass UOL com o foco no aprendizado do GitOPs no deployment de microserviços.
